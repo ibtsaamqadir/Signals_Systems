@@ -14,3 +14,23 @@ To perform Frequency Division Multiplexing (FDM), several steps are followed:
 - Again the modulated signals were passed through the low pass filter. 3k low pass filter looked optimum to retrieve the original signals. We used again the audioLowpass3k() function again. 
 - The signals were converted to audios using audiowrite() function of the MATLAB.
 - The main() function in which every other function is called. To execute the complete program, write main in the command window. 
+
+## Audio Compression
+A compressor is an audio tool used to compress the dynamic range of some input source. A compressor works by reducing the level of peaks. The range is reduced, meanwhile the credible loudness of a signal is increased. The loud bits are softened, and the quiet bits are increased in level. 
+This project involves a MATLAB-based implementation of an audio compressor. The behavior of the compressor is observed by varying the significant frequency components and observing the trend in the compressed signal. The aim is to retrieve a signal with the minimum signal distortion.
+- Read the audio file into MATLAB (Fs=44100 Hz).
+- Obtain the frequency spectrum of the audio signal. Plot this frequency spectrum against frequency in Hz.
+- Select the first L significant frequency components. Make a vector with the significant frequency components of the signal. This will be the compressed signal. Note that this signal is in the frequency domain.
+### NOTE: The lowercase L i.e., ‘l’ is used to denote the first significant frequency components in the code. In our code the variable uppercase L is used to denote the length of Time domain sound vector. Hence for the upcoming the tasks explanations notation of ‘L’ (italics uppercase L) is used for the value of significant frequency components.
+- The value ‘L’ selected for frequency components is first divided by 2 since the signal components will be selected from both sides of the spectrum. This was done due to the fact that highest amplitude components of frequencies were present in the middle of frequency spectrum (around origin). 
+- Reconstruct the audio signal in time using the compressed signal (which is currently in frequency domain).
+- Using this reconstructed frequency spectrum, obtain the audio signal in time domain.
+On playing the Audio with value of ‘L’ set to 4000 frequencies, The reconstructed audio is understandable. Apart from some loss of clarity due to compression, It’s still completely comprehensible. Hence it shows that with this value of significant frequencies ‘L’, a good balance between quality and compression is reached.
+- Calculate compression ratio
+Compression Ratio=100-(Length of significant frequencycomponents)/(Length of orignal signal)*100
+### References
+1.	https://www.sciencedirect.com/topics/computer-science/frequency-division-multiplexing
+2.	https://www.mathworks.com/help/signal/ug/introduction-to-filter-designer.html
+3.	https://www.mathworks.com/help/signal/ug/practical-introduction-to-frequency-domain-analysis.html
+4.	https://www.mathworks.com/help/signal/ref/thd.html - :~:text=r = thd( x ) returns,length as the input signal
+5.	https://academo.org/demos/spectrum-analyzer/
