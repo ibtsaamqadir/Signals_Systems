@@ -1,5 +1,5 @@
 # Signals_Systems
-##1. Frequency Division Multiplexing
+## Frequency Division Multiplexing
 Frequency-division multiplexing (FDM) is a technique, used in telecommunications, that divides the overall bandwidth available in a communication channel into a number of non-overlapping frequency bands, each of which carries a distinct signal.
 To perform Frequency Division Multiplexing (FDM), several steps are followed:
 - Record the audion signals.
